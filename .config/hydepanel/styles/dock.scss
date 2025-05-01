@@ -1,0 +1,64 @@
+@use "theme.scss";
+@use "variable";
+@use "sass:color";
+
+:vars {
+  --surface-bright: #423735;
+}
+
+#dock {
+  $dock-opacity-ratio: variable.$dock-opacity * .01;
+  $transparency-value: (
+    1 - $dock-opacity-ratio) * 100%;
+  background-color: color.mix(theme.$bar-background, transparent, $transparency-value
+  );
+padding: variable.$dock-padding_y variable.$dock-padding_x;
+margin: variable.$dock-margin_y variable.$dock-margin_x;
+border: if(variable.$dock-border-enabled, variable.$border, none);
+border-radius: variable.$dock-border-radius;
+transition: all .25s cubic-bezier(.5, .25, 0, 1);
+
+
+$shadow: 0 0 0 variable.$bar-border-width theme.$shadow-color,
+    variable.$dock-shadow-offset variable.$dock-shadow-blur variable.$dock-shadow-spread color.adjust(theme.$shadow-color,
+      $alpha: calc(variable.$dock-shadow-opacity - 1));
+
+  box-shadow: if(variable.$dock-shadow-enabled, $shadow, none);
+}
+
+#dock.occluded {
+  margin: 10px;
+  opacity: 0;
+}
+
+#dock-separator {
+  padding: 1px;
+  margin: 8px 0;
+  background-color: var(--surface-bright);
+  border-width: 1px;
+  border-radius: calc(variable.$dock-border-radius * 0.1);
+}
+
+#dock-app-button {
+  padding: 4px;
+  border-radius: variable.$dock-border-radius;
+}
+
+#dock-app-button:hover,
+#dock-app-button:hover.instance {
+  background-color: var(--surface-bright);
+  border-top: variable.$dock-border-width solid theme.$accent-blue;
+  padding-top: 3px;
+}
+
+#dock-app-button:active,
+#dock-app-button:active.instance {
+  background-color: theme.$accent-blue;
+}
+
+#dock-app-button.instance {
+  background: linear-gradient(to top, transparent, var(--surface-bright));
+  border-bottom: variable.$dock-border-width solid theme.$shadow-color;
+  border-top: variable.$dock-border-width solid theme.$surface-neutral;
+  padding: 4px;
+}

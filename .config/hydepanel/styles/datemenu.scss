@@ -1,0 +1,146 @@
+@use "sass:color";
+@use "theme.scss";
+@use "common";
+@use "variable.scss";
+
+#datetime_menu {
+  #notification-count {
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  separator {
+    background-color: variable.$border-color;
+    border-radius: variable.$radius;
+    margin: 2px 0px;
+    min-width: 2px;
+  }
+}
+
+/************** DATE MENU **************/
+
+#date-menu {
+  @include common.floating-widget;
+  @include common.spacing;
+
+  #notification-column {
+    min-width: 435px;
+    min-height: 380px;
+
+    .header {
+      margin-bottom: variable.$spacing;
+      margin-right: variable.$spacing;
+
+      label {
+        @extend %smaller;
+        padding-left: 1.5 * variable.$padding;
+        padding-right: 1 * variable.$padding;
+      }
+
+      #clear-button {
+        padding: variable.$padding * .5 variable.$padding;
+        border: variable.$border;
+        border-radius: variable.$radius;
+        background-color: theme.$background;
+        margin-right: 5px;
+        border-width: 2px;
+
+        label {
+          padding-left: common.toEm(5);
+        }
+
+        &:hover {
+          background-color: theme.$background-alt;
+
+          #clear-icon {
+            @extend %clear_icon;
+          }
+        }
+      }
+    }
+
+    .notification-scrollable {
+      .notification-list {
+        margin-right: variable.$spacing;
+      }
+
+      .placeholder {
+        image {
+          margin-bottom: 10px;
+        }
+
+        label {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  separator {
+    background-color: color.mix(
+      variable.$popover-border-color,black, 60%
+    );
+    border-radius: variable.$radius;
+    margin-right: variable.$spacing;
+  }
+
+  .date-column {
+    .clock-box {
+      padding: variable.$padding;
+
+      .clock {
+        font-size: 4.5em;
+      }
+
+      .uptime {
+        color: color.mix(theme.$text-main,transparent, 80%);
+      }
+    }
+
+    .calendar {
+      @extend %widget;
+      background-color: theme.$background-alt;
+
+      padding: variable.$padding * 2 variable.$padding * 2 0;
+
+      calendar {
+        all: unset;
+
+        &.button {
+          transition: 200ms;
+          border-radius: variable.$radius;
+          color: theme.$text-main;
+        }
+
+        &:hover {
+          color: theme.$accent-teal;
+        }
+
+        &:selected {
+          box-shadow:
+            inset 0 -5px 0 0 color.mix(theme.$ws-active, transparent, 50%),
+            inset 0 0 0 1px theme.$ws-active;
+          border-radius: variable.$radius * .6;
+        }
+
+        &.header {
+          background-color: transparent;
+          border: 0;
+          color: theme.$accent-blue;
+        }
+
+        &.highlight {
+          background-color: transparent;
+          color: theme.$accent-teal;
+        }
+
+        &:indeterminate {
+          color: color.mix(theme.$text-main, transparent, 10%);
+        }
+
+        font-size: .98em;
+        padding: .28em;
+      }
+    }
+  }
+}

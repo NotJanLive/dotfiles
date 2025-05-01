@@ -1,0 +1,1730 @@
+/* ---------------------------- */
+/* Base Colors                  */
+/* ---------------------------- */
+/* Text Colors */
+/* Surface Colors */
+/* Accent Colors */
+/* Overlay Colors */
+/* Additional UI Elements */
+/* General */
+tooltip, tooltip label, .panel-box,
+.panel-button {
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
+#notification-eventbox #notification .close-button:hover #close-icon, #datemenu-notification-eventbox #notification .close-button:hover #close-icon, #date-menu #notification-column .header #clear-button:hover #clear-icon {
+  -gtk-icon-transform: scale(1.05);
+  -gtk-icon-effect: highlight;
+}
+
+.panel-box,
+.panel-button {
+  color: #cdd6f4;
+  font-weight: 600;
+}
+
+#quicksettings-menu .quick-settings-box #user-box-grid #button-box button:hover, #quicksettings-menu .quick-settings-box #submenu .submenu-button:hover, .panel-button:hover {
+  background-color: #1e1e2e;
+  transition: border-color 400ms ease-in-out;
+}
+
+#desktop-clock-box #clock > label, #desktop-clock-box #date > label {
+  transition: color 0.5s ease;
+  color: #cdd6f4;
+  font-family: "Jost*", sans-serif;
+}
+
+/* General Typography */
+#desktop-clock-box #date > label {
+  font-weight: 800;
+  font-size: 27px;
+}
+
+#dialog-title {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#notification-eventbox #notification .notification-header .summary, #datemenu-notification-eventbox #notification .notification-header .summary {
+  font-weight: 700;
+  font-size: 14.6px;
+}
+
+#dialog-body, #dialog-button, #quicksettings-menu .quick-settings-box .quicksettings-toggle-action-box .panel-text, #quicksettings-menu .quick-settings-box #submenu .submenu-title-box .submenu-title-label, #quicksettings-menu .quick-settings-box #quicksettings-togglebutton.quicksettings-toggler, #notification-eventbox #notification .notification-body .body, #datemenu-notification-eventbox #notification .notification-body .body, #player-box .player-controls .time-label {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+#date-menu #notification-column .header label {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+#date-menu .date-column .calendar {
+  transition: 200ms;
+  border-radius: 10px;
+  color: #cdd6f4;
+  background-color: #181825;
+  border: 1px solid #313244;
+}
+
+#player-stack-button {
+  border-radius: 5px;
+  min-width: 7px;
+  min-height: 7px;
+  margin: 10px 3px;
+  background-color: #cdd6f4;
+}
+
+.flat, .shadow {
+  border-radius: 4px;
+}
+
+.shadow {
+  box-shadow: rgb(2.55, 2.55, 4.05) 0 4px;
+}
+
+.bordered {
+  border: 1.5px solid #313244;
+}
+
+.wave1 {
+  border-radius: 24px 10px;
+}
+
+.wave2 {
+  border-radius: 10px 24px;
+}
+
+.default, #osd-container, .panel-button {
+  border-radius: 9999px;
+}
+
+#panel-inner {
+  background-color: rgba(36, 35, 35, 0.3);
+  padding: 0.6em 0.8em;
+  box-shadow: none;
+}
+
+.floating {
+  margin: 1rem 1.5rem 0rem 1.5rem;
+  border-color: #313244;
+}
+
+.panel-box,
+.panel-button {
+  background-color: #11111b;
+}
+
+.panel-box {
+  border-radius: 9999px;
+  padding: 0.1em 0.9em;
+  color: #cdd6f4;
+}
+
+.panel-button {
+  padding: 0 1.25em;
+  opacity: 1;
+  box-shadow: none;
+}
+.panel-button:hover {
+  opacity: 0.9;
+}
+
+.panel-icon {
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #cdd6f4;
+}
+
+.panel-text {
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.overlay-progress-bar {
+  color: transparent;
+  background-color: transparent;
+  border-color: #313244;
+}
+
+.overlay-icon {
+  margin: 0 0.375em 0 0;
+}
+
+tooltip {
+  opacity: 1;
+  background-color: #11111b;
+  border-radius: 1em;
+  animation: tooltipShow 0.25s cubic-bezier(0.5, 0.25, 0, 1);
+  border: none;
+  box-shadow: none;
+}
+tooltip label {
+  color: #cdd6f4;
+  font-weight: 700;
+}
+
+tooltip > * {
+  padding: 0.125em 0.25em;
+}
+
+menu {
+  margin: 0.375em;
+  padding: 0.375em;
+  background-color: #181825;
+  background-clip: border-box;
+  border-radius: 12px;
+  border: 1px solid #313244;
+}
+
+menuitem {
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
+  min-height: 30px;
+  min-width: 40px;
+  background-clip: border-box;
+  border-radius: 10px;
+}
+menuitem arrow {
+  min-height: 16px;
+  min-width: 16px;
+  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+  margin-left: 8px;
+}
+menuitem separator {
+  min-height: 1px;
+  margin: 0.25em 0;
+  background-color: #1e1e2e;
+}
+
+menu > menuitem:hover {
+  background-color: #585b70;
+}
+
+menu > arrow {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 0.25em;
+  color: #181825;
+}
+
+menu > arrow.top {
+  margin-top: 0;
+  border-radius: 6px;
+  -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+menu > arrow.bottom {
+  margin-top: 8px;
+  margin-bottom: -12px;
+  border-radius: 6px;
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+check,
+radio {
+  min-height: 15px;
+  min-width: 15px;
+  margin: 0.25em;
+  padding: 0;
+  background-color: #cdd6f4;
+  border-radius: 9999px;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+check {
+  border-radius: 4px;
+}
+
+check:hover,
+radio:hover {
+  box-shadow: 0 0 0 4px rgba(17, 17, 27, 0.1);
+  background-color: #a6adc8;
+}
+
+check:active,
+radio:active {
+  box-shadow: 0 0 0 4px rgba(17, 17, 27, 0.1);
+  background-color: #11111b;
+}
+
+check:checked,
+check:indeterminate,
+radio:checked,
+radio:indeterminate {
+  color: #11111b;
+  background-color: #cdd6f4;
+}
+
+check:checked {
+  -gtk-icon-source: -gtk-icontheme("checkbox");
+}
+
+check:checked:hover,
+check:indeterminate:hover,
+radio:checked:hover,
+radio:indeterminate:hover {
+  box-shadow: 0 0 0 4px rgba(205, 214, 244, 0.1);
+  background-color: #cdd6f4;
+}
+
+check:checked:active,
+check:indeterminate:active,
+radio:checked:active,
+radio:indeterminate:active {
+  box-shadow: 0 0 0 4px rgba(205, 214, 244, 0.1);
+  background-color: #cdd6f4;
+}
+
+switch {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  margin: 0.25em 0;
+  border-radius: 9999px;
+  background-color: rgb(52.5, 52.5, 66.9);
+  background-clip: padding-box;
+  font-size: 0;
+  color: transparent;
+}
+switch slider {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  min-width: 12px;
+  min-height: 12px;
+  margin: 0.25em;
+  border-radius: 9999px;
+  outline: none;
+  background-color: #cdd6f4;
+  border: 0;
+  color: transparent;
+}
+switch:checked {
+  background-color: #06aa58;
+}
+switch:disabled {
+  opacity: 0.5;
+}
+
+@keyframes tooltipShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes spin {
+  to {
+    -gtk-icon-transform: rotate(1turn);
+  }
+}
+expander arrow {
+  min-width: 16px;
+  min-height: 16px;
+  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+  color: rgba(49, 50, 68, 0.3);
+}
+expander arrow:dir(rtl) {
+  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+expander arrow:hover {
+  color: rgba(49, 50, 68, 0.6);
+}
+expander arrow:checked {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+spinner {
+  background: none;
+  opacity: 0;
+  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+}
+
+spinner:checked {
+  opacity: 1;
+  animation: spin 1s linear infinite;
+}
+
+separator {
+  min-width: 1px;
+  min-height: 1px;
+  background-color: #313244;
+}
+
+scrollbar {
+  background-color: #cdd6f4;
+  border-radius: 10px;
+  margin-left: 8px;
+  min-width: 0.3em;
+}
+
+#corner-container {
+  min-width: 20px;
+  min-height: 20px;
+}
+#corner-container #corner {
+  background-color: rgb(36, 35, 35);
+  border-radius: 0;
+}
+
+#stat-circle {
+  color: blue;
+  border: 3px solid red;
+}
+
+#desktop-clock-box {
+  margin: 0 15rem 15rem 15rem;
+}
+#desktop-clock-box #clock > label {
+  font-size: 9rem;
+  font-weight: 600;
+}
+#divider {
+  min-width: 2px;
+  margin: 0 1.25em;
+}
+
+#spacing {
+  min-width: 20px;
+}
+
+#cpu {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#cpu #nerd-icon.panel-icon {
+  font-size: 12px;
+  margin-right: 0.125em;
+}
+
+#window_count {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#window_count #nerd-icon.panel-icon {
+  font-size: 12px;
+  margin-right: 0.125em;
+}
+
+#memory {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#memory #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#network_usage {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#network_usage #upload_label {
+  margin-right: 0.125em;
+}
+#network_usage #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#storage {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#storage #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#battery {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#bluetooth {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#brightness {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#brightness #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#cava {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#click_counter {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#click_counter #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#datetime_menu {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#desktop_clock {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#hypr_idle {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#hypr_idle #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#hypr_picker {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#hypr_picker #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#hypr_sunset {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#hypr_sunset #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#keyboard {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#keyboard #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#language {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#language #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#microphone {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#microphone #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#world_clock {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#world_clock #nerd-icon.panel-icon {
+  font-size: 12px;
+  margin-right: 0.125em;
+}
+
+#mpris {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#mpris .cover {
+  min-height: 0.8em;
+  min-width: 3em;
+  border-radius: 10px;
+  background-position: center;
+  background-size: contain;
+  margin: 0.1875em 0.625em 0.1875em 0;
+}
+
+.mpris-box {
+  background-color: #181825;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+#ocr {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#ocr label {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+#ocr menu#ocr-menu {
+  padding: 0.45em;
+}
+#ocr menu#ocr-menu menuitem {
+  padding: 0.25em 1em;
+  border-radius: 10px;
+}
+#ocr menu#ocr-menu menuitem:hover {
+  background-color: #45475a;
+}
+#ocr menu#ocr-menu menuitem:hover label#ocr-menu-item {
+  color: #11111b;
+}
+#ocr menu#ocr-menu menuitem label#ocr-menu-item {
+  color: #585b70;
+}
+#ocr menu#ocr-menu menuitem label#ocr-menu-item.selected {
+  font-weight: bold;
+  color: #f5e0dc;
+}
+
+#overview {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#recorder {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#stop_watch {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#stop_watch #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#submap {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#submap #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#theme_switcher {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#theme_switcher #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#updates {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#updates #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#volume {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#volume #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#window_title {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#window_title #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+/* OSD widget*/
+#osd-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.75em 1.25em;
+  margin-bottom: 100px;
+  opacity: 1;
+  border: none;
+  border-width: 1px;
+  box-shadow: none;
+}
+#osd-container #osd-level {
+  font-weight: 600;
+  min-width: 35px;
+  padding-left: 0.3125em;
+}
+#osd-container .overamplified trough highlight {
+  background-color: #f38ba8;
+}
+#osd-container trough {
+  transition: 200ms;
+  border-radius: 10px;
+  border: 1px solid #313244;
+  background-color: #11111b;
+  min-height: 0.5em;
+  min-width: 0.5em;
+}
+#osd-container trough highlight,
+#osd-container trough progress {
+  border-radius: 9px;
+  background-color: white;
+  min-height: 0.5em;
+}
+#osd-container trough highlight:hover,
+#osd-container trough progress:hover {
+  background-color: #cccccc;
+}
+#osd-container scale {
+  min-width: 150px;
+}
+#osd-container:disabled highlight,
+#osd-container:disabled progress {
+  background-color: rgba(205, 214, 244, 0.6);
+  background-image: none;
+}
+
+:vars {
+  --surface-bright: #423735;
+}
+
+#dock {
+  background-color: rgba(36, 35, 35, 0.5);
+  padding: 8px 8px;
+  margin: 8px 8px;
+  border: none;
+  border-radius: 1.5rem;
+  transition: all 0.25s cubic-bezier(0.5, 0.25, 0, 1);
+  box-shadow: none;
+}
+
+#dock.occluded {
+  margin: 10px;
+  opacity: 0;
+}
+
+#dock-separator {
+  padding: 1px;
+  margin: 8px 0;
+  background-color: var(--surface-bright);
+  border-width: 1px;
+  border-radius: 0.15rem;
+}
+
+#dock-app-button {
+  padding: 4px;
+  border-radius: 1.5rem;
+}
+
+#dock-app-button:hover,
+#dock-app-button:hover.instance {
+  background-color: var(--surface-bright);
+  border-top: 1px solid #89b4fa;
+  padding-top: 3px;
+}
+
+#dock-app-button:active,
+#dock-app-button:active.instance {
+  background-color: #89b4fa;
+}
+
+#dock-app-button.instance {
+  background: linear-gradient(to top, transparent, var(--surface-bright));
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  border-top: 1px solid #45475a;
+  padding: 4px;
+}
+
+#power {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#power #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+#power-button-menu {
+  background-color: #1e1e2e;
+}
+
+#power-control-button {
+  padding: 2.5em 7.5em;
+  border-radius: 0;
+  border-color: #313244;
+  text-decoration-color: #cdd6f4;
+  color: #cdd6f4;
+  background-color: #1e1e2e;
+  border-style: solid;
+  border-width: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+}
+#power-control-button label {
+  margin-top: 4.5em;
+}
+#power-control-button:focus, #power-control-button:active, #power-control-button:hover {
+  background-color: #cba6f7;
+  outline-style: none;
+}
+
+#player-stack-button:hover {
+  background-color: #646464;
+}
+#player-stack-button.active {
+  border-radius: 5px;
+  background-color: rgb(221.25, 221.25, 223.65);
+}
+#player-stack-button.empty {
+  min-width: 9px;
+  margin: 0.875em 0.125em;
+  background-color: #cdd6f4;
+}
+
+#player-box {
+  min-height: 119px;
+}
+#player-box #outer-player-box {
+  min-width: 410px;
+  min-height: 115px;
+}
+#player-box #inner-player-box {
+  background-color: #1e1e2e;
+  border-radius: 15px;
+  margin-left: 57px;
+  min-width: 352px;
+  min-height: 125px;
+}
+#player-box #player-info-box {
+  margin-left: 125px;
+  min-width: 275px;
+}
+#player-box #track-info {
+  min-width: 275px;
+}
+#player-box #player-image-stack {
+  border-radius: 100%;
+  box-shadow: 0 0 4px 0 black;
+}
+#player-box #player-title {
+  margin-top: 18px;
+  font-weight: 700;
+  color: #cdd6f4;
+  font-size: 1rem;
+}
+#player-box #player-artist,
+#player-box #player-album {
+  font-weight: 500;
+  font-size: 12px;
+  color: #7d7178;
+}
+#player-box .player-controls {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+#player-box .player-controls .time-label {
+  color: #7d7178;
+}
+#player-box .player-controls #button-box {
+  margin: 0 0.625em;
+}
+#player-box .player-controls #button-box #player-button {
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0.3125em;
+  border-radius: 100%;
+}
+#player-box .player-controls #button-box #player-button:hover {
+  background: #181825;
+  box-shadow: 0 0 2px -3px black;
+}
+#player-box .player-controls #button-box #player-button:active {
+  box-shadow: 0 0 4px -1px black;
+}
+#player-box .player-controls #button-box #player-button:disabled {
+  color: #5f5f5f;
+}
+#player-box scale {
+  margin-top: 10px;
+}
+#player-box scale trough {
+  border-radius: 9999px;
+  min-height: 8px;
+  background-color: rgb(16.5, 16.5, 25.3);
+}
+#player-box scale trough highlight {
+  border-radius: 9999px;
+}
+#player-box scale trough:hover {
+  background-color: rgb(13.5, 13.5, 20.7);
+}
+#player-box highlight,
+#player-box progress {
+  background: #a6adc8;
+}
+
+/** taskbar widget **/
+#task_bar {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+  font-style: normal;
+  color: #cdd6f4;
+  background-color: #11111b;
+}
+#task_bar-box {
+  margin: 0 0.125em;
+}
+#task_bar button {
+  padding: 0 0.125em;
+  margin: 0.125em 0.125em;
+  border: 0;
+}
+#task_bar button:last-child {
+  margin-right: 0;
+}
+
+#weather {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#weather #nerd-icon.panel-icon {
+  font-size: 14px;
+  margin-right: 0.125em;
+}
+
+.weather-box {
+  box-shadow: none;
+  margin: 12pt;
+  border: 1px solid rgba(49, 50, 68, 0.05);
+  background-color: #11111b;
+  color: #cdd6f4;
+  border-radius: 1.5em;
+  padding: 1em 1em;
+}
+.weather-box #weather-header-grid {
+  font-size: 11pt;
+  color: white;
+  font-weight: 500;
+}
+.weather-box #weather-header-grid .header-label {
+  font-size: 1em;
+}
+.weather-box #weather-header-grid .temperature {
+  font-size: 2em;
+}
+.weather-box #weather-header-grid .feels-like {
+  font-size: 0.8em;
+}
+.weather-box #weather-separator {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 2px;
+}
+.weather-box #weather-grid .weather-forecast-time {
+  font-weight: 500;
+  font-size: 10pt;
+  padding-top: 7pt;
+  padding-bottom: 7pt;
+}
+.weather-box #weather-grid .weather-forecast-icon {
+  margin-bottom: 0.25em;
+}
+.weather-box #weather-grid .weather-forecast-temp {
+  font-feature-settings: "tnum";
+  font-weight: 700;
+}
+
+/* overview  widget */
+#overview-window {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 50px;
+  padding: 0.625em;
+}
+
+#overview-icon {
+  margin: 0.3125em;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: black;
+  border-radius: 15px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.3125em;
+}
+
+#overview-client-box,
+#overview-workspace-bg,
+#overview-frame {
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+
+#overview-client-box {
+  background-color: #cdd6f4;
+}
+#overview-client-box:hover {
+  background-color: rgba(205, 214, 244, 0.7);
+}
+#overview-client-box:active {
+  background-color: #cdd6f4;
+}
+
+#overview-workspace-bg {
+  background-color: #2a2a2a;
+}
+
+#overview-workspace-box {
+  padding: 0.9375em;
+}
+#overview-workspace-box label {
+  margin-top: 15px;
+  font-size: 23px;
+  font-weight: 700;
+  font-family: league spartan;
+}
+
+#datetime_menu #notification-count {
+  font-weight: 700;
+  font-size: 11px;
+}
+#datetime_menu separator {
+  background-color: #313244;
+  border-radius: 10px;
+  margin: 2px 0px;
+  min-width: 2px;
+}
+
+/************** DATE MENU **************/
+#date-menu {
+  box-shadow: none;
+  margin: 12pt;
+  border: 1px solid rgba(49, 50, 68, 0.05);
+  background-color: #11111b;
+  color: #cdd6f4;
+  border-radius: 1.5em;
+  padding: 1em 1em;
+}
+#date-menu.horizontal > * {
+  margin: 0 6pt;
+}
+#date-menu.horizontal > *:first-child {
+  margin-left: 0;
+}
+#date-menu.horizontal > *:last-child {
+  margin-right: 0;
+}
+#date-menu.vertical > * {
+  margin: 6pt 0;
+}
+#date-menu.vertical > *:first-child {
+  margin-top: 0;
+}
+#date-menu.vertical > *:last-child {
+  margin-bottom: 0;
+}
+#date-menu #notification-column {
+  min-width: 435px;
+  min-height: 380px;
+}
+#date-menu #notification-column .header {
+  margin-bottom: 12pt;
+  margin-right: 12pt;
+}
+#date-menu #notification-column .header label {
+  padding-left: 10.5pt;
+  padding-right: 7pt;
+}
+#date-menu #notification-column .header #clear-button {
+  padding: 3.5pt 7pt;
+  border: 1px solid #313244;
+  border-radius: 10px;
+  background-color: #1e1e2e;
+  margin-right: 5px;
+  border-width: 2px;
+}
+#date-menu #notification-column .header #clear-button label {
+  padding-left: 0.3125em;
+}
+#date-menu #notification-column .header #clear-button:hover {
+  background-color: #181825;
+}
+#date-menu #notification-column .notification-scrollable .notification-list {
+  margin-right: 12pt;
+}
+#date-menu #notification-column .notification-scrollable .placeholder image {
+  margin-bottom: 10px;
+}
+#date-menu #notification-column .notification-scrollable .placeholder label {
+  font-size: 1em;
+}
+#date-menu separator {
+  background-color: rgba(1.8148148148, 1.8518518519, 2.5185185185, 0.43);
+  border-radius: 10px;
+  margin-right: 12pt;
+}
+#date-menu .date-column .clock-box {
+  padding: 7pt;
+}
+#date-menu .date-column .clock-box .clock {
+  font-size: 4.5em;
+}
+#date-menu .date-column .clock-box .uptime {
+  color: rgba(205, 214, 244, 0.8);
+}
+#date-menu .date-column .calendar {
+  background-color: #181825;
+  padding: 14pt 14pt 0;
+}
+#date-menu .date-column .calendar calendar {
+  all: unset;
+  font-size: 0.98em;
+  padding: 0.28em;
+}
+#date-menu .date-column .calendar calendar.button {
+  transition: 200ms;
+  border-radius: 10px;
+  color: #cdd6f4;
+}
+#date-menu .date-column .calendar calendar:hover {
+  color: #94e2d5;
+}
+#date-menu .date-column .calendar calendar:selected {
+  box-shadow: inset 0 -5px 0 0 rgba(166, 173, 200, 0.5), inset 0 0 0 1px #a6adc8;
+  border-radius: 6px;
+}
+#date-menu .date-column .calendar calendar.header {
+  background-color: transparent;
+  border: 0;
+  color: #89b4fa;
+}
+#date-menu .date-column .calendar calendar.highlight {
+  background-color: transparent;
+  color: #94e2d5;
+}
+#date-menu .date-column .calendar calendar:indeterminate {
+  color: rgba(205, 214, 244, 0.1);
+}
+
+/** workspace switcher widget */
+#workspaces {
+  font-weight: 700;
+  padding: 0.19em 1em;
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#workspaces > button {
+  padding: 0.125em 0.5em;
+  transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 9999px;
+  background-color: #1e1e2e;
+}
+#workspaces > button label {
+  color: #cdd6f4;
+  transition: inherit;
+}
+#workspaces > button:hover {
+  background-color: #f5c2e7;
+}
+#workspaces > button:hover label {
+  color: #11111b;
+}
+#workspaces > button.active {
+  font-weight: 600;
+  min-width: 1.4rem;
+  transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #a6adc8;
+}
+#workspaces > button.active > label {
+  color: #11111b;
+}
+#workspaces > button.unoccupied {
+  opacity: 0.5;
+}
+#workspaces > button.unoccupied:hover {
+  opacity: 1;
+}
+
+/* system tray widget*/
+#system-tray-menu {
+  padding: 0.5em 0.25em;
+  color: #cdd6f4;
+  border-radius: 10px;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: #11111b;
+}
+#system-tray-menu grid > button {
+  margin: 0 0.1em;
+  padding: 0 0.15em;
+  border-radius: 9999px;
+}
+#system-tray-menu grid > button:hover {
+  background-color: #313244;
+}
+#system-tray-menu grid > button:active {
+  background-color: #cdd6f4;
+}
+
+/* system tray widget*/
+#system_tray {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+#system_tray-box {
+  margin: 0 0.125em;
+}
+#system_tray .toggle-icon,
+#system_tray .panel-icon {
+  margin: 0;
+  padding: 0;
+}
+#system_tray .toggle-icon.active,
+#system_tray .panel-icon.active {
+  background-color: #181825;
+}
+#system_tray separator {
+  background-color: #313244;
+  border-radius: 10px;
+  margin: 8px 4px;
+  min-width: 1.2px;
+}
+
+.panel-module-group.compact {
+  padding: 0;
+  margin: 0;
+}
+.panel-module-group.compact > *:not(:first-child) {
+  padding-right: 10.5pt;
+  padding-left: 7pt;
+}
+.panel-module-group.compact > *:not(:last-child) {
+  padding-right: 7pt;
+  padding-left: 10.5pt;
+}
+.panel-module-group.bordered {
+  border: 1px solid #f5e0dc;
+  background: transparent;
+  padding: 0.25em 0.3125em;
+}
+.panel-module-group.bordered separator {
+  padding: 0;
+  margin: 0;
+}
+
+/* notification widget*/
+#notification-eventbox #notification, #datemenu-notification-eventbox #notification {
+  padding: 0.9em 0.9em;
+  opacity: 1;
+  color: #cdd6f4;
+  border-radius: 16px;
+  background-color: #181825;
+  border: none;
+  border-width: 1px;
+  transition: border 100ms ease-in-out;
+  box-shadow: none;
+}
+#notification-eventbox #notification .notification-header, #datemenu-notification-eventbox #notification .notification-header {
+  padding: 0.3125em;
+}
+#notification-eventbox #notification .notification-header .app-icon, #datemenu-notification-eventbox #notification .notification-header .app-icon {
+  /* Notification app icon (only visible when the primary image is set) */
+  -gtk-icon-effect: none;
+  -gtk-icon-shadow: 0 1px 4px black;
+  margin: 0.375em;
+}
+#notification-eventbox #notification .notification-header .summary, #datemenu-notification-eventbox #notification .notification-header .summary {
+  text-shadow: none;
+}
+#notification-eventbox #notification .notification-header .timestamp, #datemenu-notification-eventbox #notification .notification-header .timestamp {
+  font-size: 12px;
+  font-weight: 700;
+  text-shadow: none;
+  margin-right: 10px;
+}
+#notification-eventbox #notification .notification-body .body, #datemenu-notification-eventbox #notification .notification-body .body {
+  background-color: transparent;
+  text-shadow: none;
+  padding: 0.3125em;
+}
+#notification-eventbox #notification .notification-body .image, #datemenu-notification-eventbox #notification .notification-body .image {
+  -gtk-icon-effect: none;
+  border-radius: 0.9375em;
+}
+#notification-eventbox #notification .close-button, #datemenu-notification-eventbox #notification .close-button {
+  border-radius: 9999px;
+}
+#notification-eventbox #notification .close-button:hover, #datemenu-notification-eventbox #notification .close-button:hover {
+  box-shadow: none;
+  border: 0;
+  background-color: rgba(205, 214, 244, 0.2);
+  transition: background 0.15s ease-in-out;
+}
+#notification-eventbox #notification #notification-action-box button, #datemenu-notification-eventbox #notification #notification-action-box button {
+  padding: 0.25em;
+  margin: 0;
+  font-weight: 600;
+  border-radius: 3rem;
+  box-shadow: none;
+  background-color: transparent;
+  transition: background 0.15s ease-in-out;
+}
+#notification-eventbox #notification #notification-action-box button.start-action, #datemenu-notification-eventbox #notification #notification-action-box button.start-action {
+  margin-left: 0;
+}
+#notification-eventbox #notification #notification-action-box button.end-action, #datemenu-notification-eventbox #notification #notification-action-box button.end-action {
+  margin-right: 0;
+}
+#notification-eventbox #notification #notification-action-box button:hover, #datemenu-notification-eventbox #notification #notification-action-box button:hover {
+  background-color: #1e1e2e;
+}
+#notification-eventbox #notification #notification-circular-progress-bar, #datemenu-notification-eventbox #notification #notification-circular-progress-bar {
+  border: solid 0 rgb(151, 151, 177);
+  color: transparent;
+}
+#notification-eventbox #notification .critical, #datemenu-notification-eventbox #notification .critical {
+  box-shadow: inset 0 0 0.15em 0 #f38ba8;
+}
+
+#datemenu-notification-eventbox #notification {
+  opacity: 1;
+}
+
+#list-box-row {
+  margin-bottom: 10px;
+}
+
+#dialog-wrapper {
+  background-color: #11111b;
+  border-radius: 10px;
+  padding: 1rem 2.5rem;
+  border: 1px solid #89b4fa;
+}
+#dialog-title {
+  margin: 1rem;
+}
+#dialog-body {
+  margin: 1rem;
+}
+#dialog-buttons-box {
+  margin: 1rem;
+  margin-top: 2.5rem;
+}
+#dialog-button {
+  padding: 0.5rem 2.5rem;
+  border-radius: 10px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  margin: 0 1rem;
+}
+#dialog-button:nth-child(1):hover {
+  background-color: #4caf50;
+  color: #1e1e2e;
+}
+#dialog-button:nth-child(2):hover {
+  background-color: #e53935;
+  color: #1e1e2e;
+}
+
+#quick_settings {
+  border-radius: 16px;
+  border: none;
+  border-width: 1px;
+}
+
+#quicksettings-menu {
+  min-width: 370px;
+  box-shadow: none;
+  margin: 12pt;
+  border: 1px solid rgba(49, 50, 68, 0.05);
+  background-color: #11111b;
+  color: #cdd6f4;
+  border-radius: 1.5em;
+  padding: 1em 1em;
+  padding: 4pt 1pt;
+}
+#quicksettings-menu.horizontal > * {
+  margin: 0 6pt;
+}
+#quicksettings-menu.horizontal > *:first-child {
+  margin-left: 0;
+}
+#quicksettings-menu.horizontal > *:last-child {
+  margin-right: 0;
+}
+#quicksettings-menu.vertical > * {
+  margin: 6pt 0;
+}
+#quicksettings-menu.vertical > *:first-child {
+  margin-top: 0;
+}
+#quicksettings-menu.vertical > *:last-child {
+  margin-bottom: 0;
+}
+#quicksettings-menu .power-profile .active {
+  color: rgb(162.4, 132.8, 197.6);
+}
+#quicksettings-menu .power-profile .power-profile-button:hover {
+  color: #cba6f7;
+}
+#quicksettings-menu .quick-settings-box #user-box-grid {
+  margin-bottom: 10px;
+}
+#quicksettings-menu .quick-settings-box #user-box-grid #button-box {
+  min-width: 240px;
+  min-height: 50px;
+}
+#quicksettings-menu .quick-settings-box #user-box-grid #button-box button {
+  margin: 0 5px;
+  background-color: rgb(52.5, 52.5, 66.9);
+  border-radius: 9999px;
+  padding: 0.25em;
+}
+#quicksettings-menu .quick-settings-box #user-box-grid #button-box button:last-child {
+  margin-right: 20px;
+}
+#quicksettings-menu .quick-settings-box #user-box-grid .user {
+  font-weight: 600;
+}
+#quicksettings-menu .quick-settings-box #user-box-grid .uptime {
+  font-size: 0.92rem;
+  border: 1px solid rgb(234.4, 234.5, 236.3);
+  padding: 0.1875em 0.625em;
+  font-weight: 600;
+  border-radius: 1rem;
+}
+#quicksettings-menu .quick-settings-box .section-box {
+  margin: 1.4rem 1rem;
+  margin-bottom: 0;
+}
+#quicksettings-menu .quick-settings-box .quicksettings-toggle-action {
+  border-radius: 9999px 0 0 9999px;
+  min-height: 35px;
+}
+#quicksettings-menu .quick-settings-box .quicksettings-toggle-action-box {
+  margin: 0 0.3125em;
+}
+#quicksettings-menu .quick-settings-box .shortcuts-box {
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+#quicksettings-menu .quick-settings-box .shortcuts-box button {
+  padding: 0.3125em;
+  border-radius: 10px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  min-height: 32px;
+}
+#quicksettings-menu .quick-settings-box .shortcuts-box button:hover {
+  background-color: #89b4fa;
+  color: #1e1e2e;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter, #quicksettings-menu .quick-settings-box .slider-box-short, #quicksettings-menu .quick-settings-box .slider-box-long {
+  padding: 0.9375em;
+  border-radius: 10px;
+  background-color: #1e1e2e;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider-scale, #quicksettings-menu .quick-settings-box .slider-box-short #setting-slider-scale, #quicksettings-menu .quick-settings-box .slider-box-long #setting-slider-scale {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider-label, #quicksettings-menu .quick-settings-box .slider-box-short #setting-slider-label, #quicksettings-menu .quick-settings-box .slider-box-long #setting-slider-label {
+  font-weight: 700;
+  font-size: 12.5px;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider-button, #quicksettings-menu .quick-settings-box .slider-box-short #setting-slider-button, #quicksettings-menu .quick-settings-box .slider-box-long #setting-slider-button {
+  background-color: transparent;
+  padding: 0 0.125em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider trough {
+  transition: 200ms;
+  border-radius: 10px;
+  border: 1px solid #313244;
+  background-color: #11111b;
+  min-height: 0.7em;
+  min-width: 0.7em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider trough highlight,
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider trough progress {
+  border-radius: 9px;
+  background-color: #89b4fa;
+  min-height: 0.7em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider trough highlight:hover,
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider trough progress:hover {
+  background-color: rgb(109.6, 144, 200);
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider scale {
+  min-width: 320px;
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider slider {
+  background-color: #cdd6f4;
+  border-color: #313244;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+  border: 1px solid transparent;
+  transition: 200ms;
+  border-radius: 9999px;
+  min-height: 0.7em;
+  min-width: 0.7em;
+  margin: -0.5em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider slider:hover {
+  background-color: rgb(184.5, 192.6, 219.6);
+}
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider:disabled highlight,
+#quicksettings-menu .quick-settings-box .slider-box-long #setting-slider:disabled progress {
+  background-color: rgba(205, 214, 244, 0.6);
+  background-image: none;
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider trough {
+  transition: 200ms;
+  border-radius: 10px;
+  border: 1px solid #313244;
+  background-color: #11111b;
+  min-height: 0.7em;
+  min-width: 0.7em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider trough highlight,
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider trough progress {
+  border-radius: 9px;
+  background-color: #89b4fa;
+  min-height: 0.7em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider trough highlight:hover,
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider trough progress:hover {
+  background-color: rgb(109.6, 144, 200);
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider scale {
+  min-width: 230px;
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider slider {
+  background-color: #cdd6f4;
+  border-color: #313244;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+  border: 1px solid transparent;
+  transition: 200ms;
+  border-radius: 9999px;
+  min-height: 0.7em;
+  min-width: 0.7em;
+  margin: -0.5em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider slider:hover {
+  background-color: rgb(184.5, 192.6, 219.6);
+}
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider:disabled highlight,
+#quicksettings-menu .quick-settings-box .slider-box-short #setting-slider:disabled progress {
+  background-color: rgba(205, 214, 244, 0.6);
+  background-image: none;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider trough {
+  transition: 200ms;
+  border-radius: 10px;
+  border: 1px solid #313244;
+  background-color: #11111b;
+  min-height: 0.7em;
+  min-width: 0.7em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider trough highlight,
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider trough progress {
+  border-radius: 9px;
+  background-color: #89b4fa;
+  min-height: 0.7em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider trough highlight:hover,
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider trough progress:hover {
+  background-color: rgb(109.6, 144, 200);
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider scale {
+  min-width: 140px;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider slider {
+  background-color: #cdd6f4;
+  border-color: #313244;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+  border: 1px solid transparent;
+  transition: 200ms;
+  border-radius: 9999px;
+  min-height: 0.7em;
+  min-width: 0.7em;
+  margin: -0.5em;
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider slider:hover {
+  background-color: rgb(184.5, 192.6, 219.6);
+}
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider:disabled highlight,
+#quicksettings-menu .quick-settings-box .slider-box-shorter #setting-slider:disabled progress {
+  background-color: rgba(205, 214, 244, 0.6);
+  background-image: none;
+}
+#quicksettings-menu .quick-settings-box #submenu {
+  margin-top: 10px;
+  min-height: 100px;
+  background-color: #181825;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-title-box {
+  margin-bottom: 10px;
+  padding: 0.3125em;
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-title-box .submenu-title-label {
+  margin-left: 10px;
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-item-label {
+  font-size: 13px;
+  margin-left: 5px;
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-button {
+  margin: 0 0.125em;
+  padding: 0 0.3125em;
+  border-radius: 10px;
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-button.activated {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-button:active {
+  background-color: #cdd6f4;
+}
+#quicksettings-menu .quick-settings-box #submenu .submenu-button:active > * {
+  color: #11111b;
+}
+#quicksettings-menu .quick-settings-box #submenu #wifi-ap-button.submenu-button {
+  padding: 0.4375em 0;
+}
+#quicksettings-menu .quick-settings-box #submenu #wifi-ap-button.submenu-button:hover {
+  color: #cba6f7;
+}
+#quicksettings-menu .quick-settings-box #submenu #bluetooth-device-box.submenu-button .submenu-button {
+  padding: 0.375em;
+  background-color: #11111b;
+}
+#quicksettings-menu .quick-settings-box #submenu #bluetooth-device-box.submenu-button .submenu-button label {
+  font-size: 11px;
+  font-weight: 600;
+}
+#quicksettings-menu .quick-settings-box #submenu #bluetooth-device-box.submenu-button .submenu-button:hover {
+  color: #cba6f7;
+}
+#quicksettings-menu .quick-settings-box #submenu #scan-button:active {
+  background-color: transparent;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton .toggle-revealer {
+  border-radius: 0 9999px 9999px 0;
+  padding: 0.625em 0.3125em;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.quicksettings-toggler {
+  background-color: #1e1e2e;
+  border-radius: 9999px;
+  padding: 0.1875em 0;
+  padding-left: 0.625em;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.quicksettings-toggler.active {
+  background-color: #89b4fa;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.quicksettings-toggler.active:hover {
+  background-color: rgb(116.45, 153, 212.5);
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.quicksettings-toggler.active label {
+  color: rgb(234.6, 234.6, 234.6);
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.quicksettings-toggler.active image {
+  color: rgb(234.6, 234.6, 234.6);
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button image,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button label,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button {
+  background-color: #89b4fa;
+  color: rgb(234.6, 234.6, 234.6);
+  padding-left: 0.0625em;
+  padding-right: 0.25em;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button:hover image,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button:hover label,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button:hover {
+  background-color: rgb(123.3, 162, 225);
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button:active image,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button:active label,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton.active button:active {
+  background-color: rgb(123.3, 162, 225);
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button image,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button label,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button:hover image,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button:hover label,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button:hover {
+  background-color: #1e1e2e;
+}
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button:active image,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button:active label,
+#quicksettings-menu .quick-settings-box #quicksettings-togglebutton button:active {
+  background-color: #181825;
+}
+
+/* unset so we can style everything from the ground up. */
+* {
+  all: unset;
+  font-size: 1rem;
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-style: normal;
+}
