@@ -296,10 +296,17 @@
 					"icon_size": 18
 				},
 				{
-					"icon": "firefox-symbolic",
+					"icon": "brave-symbolic",
 					"label": "Browser",
-					"command": "firefox",
-					"tooltip": "Launch Firefox",
+					"command": "brave",
+					"tooltip": "Launch Brave",
+					"icon_size": 18
+				},
+				{
+					"icon": "audio-volume-high-symbolic",
+					"label": "Sound",
+					"command": "pwvucontrol",
+					"tooltip": "Open sound settings",
 					"icon_size": 18
 				}
 			]

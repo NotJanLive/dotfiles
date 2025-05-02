@@ -9,15 +9,27 @@ from fabric.widgets.svg import Svg
 from gi.repository import Gtk
 
 from services import WeatherService
-from shared import ButtonWidget, Popover, Separator
+from shared import ButtonWidget, Popover
+from shared.submenu import ScanButton
 from utils import BarConfig
 from utils.functions import convert_seconds_to_milliseconds
 from utils.icons import weather_icons
 from utils.widget_utils import text_icon
 
+weather_service = WeatherService()
+
 
 class WeatherMenu(Box):
     """A menu to display the weather information."""
+
+    def sunrise_sunset_time(self) -> str:
+        return f" {self.sunrise_time}  {self.sunset_time}"
+
+    def temperature(self, celsius=True) -> str:
+        if celsius:
+            return f" {self.current_weather['temp_C']}°C"
+        else:
+            return f" {self.current_weather['temp_F']}°F"
 
     def __init__(
         self,
@@ -31,6 +43,9 @@ class WeatherMenu(Box):
             spacing=5,
             **kwargs,
         )
+        self.scan_btn = ScanButton(h_align="start", visible=False)
+
+        self.scan_btn.connect("clicked", lambda *_: self.scan_btn.play_animation())
 
         # Get the current weather
         self.current_weather = data["current"]
@@ -49,12 +64,12 @@ class WeatherMenu(Box):
         self.current_weather_image = Svg(
             svg_file=self.get_weather_asset(self.current_weather["weatherCode"]),
             size=100,
-            style_classes="weather",
+            v_align="start",
+            h_align="start",
         )
 
         self.title_box = Gtk.Grid(
             name="weather-header-grid",
-            column_spacing=20,
             visible=True,
         )
 
@@ -63,25 +78,27 @@ class WeatherMenu(Box):
             0,
             0,
             2,
-            2,
+            3,
         )
 
-        self.title_box.attach_next_to(
+        self.title_box.attach(
             Label(
                 style_classes="header-label",
+                h_align="start",
+                label=f"{data['location']}",
+            ),
+            2,
+            0,
+            1,
+            1,
+        )
+
+        self.title_box.attach(
+            Label(
+                name="condition",
+                h_align="start",
                 label=f"{self.current_weather['weatherDesc'][0]['value']}",
             ),
-            self.current_weather_image,
-            Gtk.PositionType.RIGHT,
-            1,
-            1,
-        )
-
-        self.title_box.attach(
-            Label(
-                style_classes="temperature",
-                label=f"{self.current_weather['temp_C']}°C",
-            ),
             2,
             1,
             1,
@@ -91,7 +108,21 @@ class WeatherMenu(Box):
         self.title_box.attach(
             Label(
                 style_classes="header-label",
-                label=f" {self.current_weather['windspeedKmph']} mph",
+                name="sunrise-sunset",
+                h_align="start",
+                label=self.sunrise_sunset_time(),
+            ),
+            2,
+            2,
+            1,
+            1,
+        )
+
+        self.title_box.attach(
+            Label(
+                style_classes="stats",
+                h_align="center",
+                label=self.temperature(),
             ),
             3,
             0,
@@ -101,7 +132,8 @@ class WeatherMenu(Box):
 
         self.title_box.attach(
             Label(
-                style_classes="humidity",
+                style_classes="stats",
+                h_align="center",
                 label=f"󰖎 {self.current_weather['humidity']}%",
             ),
             3,
@@ -112,25 +144,70 @@ class WeatherMenu(Box):
 
         self.title_box.attach(
             Label(
-                style_classes="header-label",
-                label=f"{data['location']}",
+                style_classes="stats",
+                h_align="center",
+                label=f" {self.current_weather['windspeedKmph']} mph",
             ),
-            4,
-            0,
+            3,
+            2,
             1,
             1,
         )
 
-        self.title_box.attach(
-            Label(
-                style_classes="feels-like",
-                label=f"Feels Like {self.current_weather['FeelsLikeC']}°C",
-            ),
-            4,
-            1,
-            1,
-            1,
-        )
+        # self.title_box.attach(
+        #     Label(
+        #         style_classes="temperature",
+        #         label=f"{self.current_weather['temp_C']}°C",
+        #     ),
+        #     2,
+        #     1,
+        #     1,
+        #     1,
+        # )
+
+        # self.title_box.attach(
+        #     Label(
+        #         style_classes="header-label",
+        #         label=f" {self.current_weather['windspeedKmph']} mph",
+        #     ),
+        #     3,
+        #     0,
+        #     1,
+        #     1,
+        # )
+
+        # self.title_box.attach(
+        #     Label(
+        #         style_classes="humidity",
+        #         label=f"󰖎 {self.current_weather['humidity']}%",
+        #     ),
+        #     3,
+        #     1,
+        #     1,
+        #     1,
+        # )
+
+        # self.title_box.attach(
+        #     Label(
+        #         style_classes="header-label",
+        #         label=f"{data['location']}",
+        #     ),
+        #     4,
+        #     0,
+        #     1,
+        #     1,
+        # )
+
+        # self.title_box.attach(
+        #     Label(
+        #         style_classes="feels-like",
+        #         label=f"Feels Like {self.current_weather['FeelsLikeC']}°C",
+        #     ),
+        #     4,
+        #     1,
+        #     1,
+        #     1,
+        # )
 
         # Create a grid to display the hourly forecast
         self.forecast_box = Gtk.Grid(
@@ -140,14 +217,13 @@ class WeatherMenu(Box):
             visible=True,
         )
 
-        self.children = (
-            self.title_box,
-            Separator(
-                orientation="vertical",
-                name="weather-separator",
-            ),
-            self.forecast_box,
+        expander = Gtk.Expander(
+            name="weather-expander",
+            visible=True,
+            child=self.forecast_box,
         )
+
+        self.children = (self.scan_btn, self.title_box, expander)
 
         invoke_repeater(
             convert_seconds_to_milliseconds(3600),
@@ -177,7 +253,7 @@ class WeatherMenu(Box):
                     column_data["weatherCode"],
                     self.convert_to_12hr_format(column_data["time"]),
                 ),
-                size=70,
+                size=65,
                 h_align="center",
                 h_expand=True,
                 style_classes="weather-forecast-icon",
@@ -245,8 +321,6 @@ class WeatherWidget(ButtonWidget):
             **kwargs,
         )
 
-        self.weather_service = WeatherService().get_default()
-
         self.bar = bar
 
         self.weather_icon = text_icon(
@@ -269,7 +343,7 @@ class WeatherWidget(ButtonWidget):
 
     def weather_poll(self, fabricator):
         while True:
-            yield {"weather": self.weather_service.get_weather(self.config["location"])}
+            yield {"weather": weather_service.get_weather(self.config["location"])}
             time.sleep(self.config["interval"] / 1000)
 
     def update_ui(self, fabricator, value):

@@ -4,6 +4,8 @@ from fabric.widgets.image import Image
 from fabric.widgets.label import Label
 from fabric.widgets.widget import Widget
 from gi.repository import Gtk
+import subprocess
+import os
 
 from shared import ButtonWidget, PopupWindow
 from shared.dialog import Dialog
@@ -89,12 +91,13 @@ class PowerControlButtons(HoverButton):
             command=command,
             **kwargs,
         )
+        self.process = None  # Track the script process
 
         super().__init__(
             config=config,
             orientation="v",
             name="power-control-button",
-            on_clicked=lambda _: self.on_button_press(),
+            on_clicked=lambda _: self.on_button_press(),  # This is correctly bound
             child=Box(
                 orientation="v",
                 children=[
@@ -112,26 +115,35 @@ class PowerControlButtons(HoverButton):
             **kwargs,
         )
 
-    def on_button_press(
-        self,
-    ):
-        PowerMenuPopup.get_default(widget_config=self.config).toggle_popup()
-        self.dialog.toggle_popup()
+    def on_button_press(self):
+        script_path = os.path.expanduser("~/.config/rofi/powermenu/type-4/powermenu.sh")
+
+        if self.process and self.process.poll() is None:
+            try:
+                self.process.terminate()
+                print("Terminated power menu script.")
+            except Exception as e:
+                print(f"Error terminating script: {e}")
+            self.process = None
+        else:
+            try:
+                self.process = subprocess.Popen(["bash", script_path])
+                print("Started power menu script.")
+            except Exception as e:
+                print(f"Error starting script: {e}")
+
         return True
 
 
 class PowerWidget(ButtonWidget):
-    """A widget to power off the system."""
-
     def __init__(self, widget_config: BarConfig, bar, **kwargs):
         super().__init__(widget_config, name="power", **kwargs)
 
         self.config = widget_config["power"]
-
         self.power_label = Label(label="power", style_classes="panel-text")
+        self.process = None  # Store the process
 
         if self.config["show_icon"]:
-            # Create a TextIcon with the specified icon and size
             self.icon = text_icon(
                 icon=self.config["icon"],
                 props={"style_classes": "panel-icon"},
@@ -144,9 +156,21 @@ class PowerWidget(ButtonWidget):
         if self.config["tooltip"]:
             self.set_tooltip_text("Power")
 
-        self.connect(
-            "clicked",
-            lambda *_: PowerMenuPopup.get_default(
-                widget_config=self.config
-            ).toggle_popup(),
-        )
+        self.connect("clicked", self.toggle_rofi_menu)
+
+    def toggle_rofi_menu(self, *_):
+        script_path = os.path.expanduser("~/.config/rofi/powermenu/type-4/powermenu.sh")
+
+        if self.process and self.process.poll() is None:
+            try:
+                self.process.terminate()
+                print("Rofi powermenu script terminated.")
+            except Exception as e:
+                print(f"Failed to terminate script: {e}")
+            self.process = None
+        else:
+            try:
+                self.process = subprocess.Popen(["bash", script_path])
+                print("Rofi powermenu script started.")
+            except Exception as e:
+                print(f"Failed to start script: {e}")

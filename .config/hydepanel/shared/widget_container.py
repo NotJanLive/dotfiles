@@ -33,7 +33,7 @@ class EventBoxWidget(EventBox):
             **kwargs,
         )
         self.config = config
-        self.box = Box()
+        self.box = Box(style_classes="panel-box")
         self.children = (self.box,)
         setup_cursor_hover(self)
 
@@ -60,7 +60,5 @@ class HoverButton(Button):
         super().__init__(
             **kwargs,
         )
-
-        Button()
 
         setup_cursor_hover(self)

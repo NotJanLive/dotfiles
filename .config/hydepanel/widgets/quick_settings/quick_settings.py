@@ -23,15 +23,9 @@ from utils.widget_utils import (
     get_brightness_icon_name,
     util_fabricator,
 )
-from widgets.media import PlayerBoxStack
-from widgets.quick_settings.shortcuts import ShortcutsContainer
-from widgets.quick_settings.submenu.mic import MicroPhoneSubMenu
-from widgets.quick_settings.togglers import (
-    HyprIdleQuickSetting,
-    HyprSunsetQuickSetting,
-    NotificationQuickSetting,
-)
 
+from ..media import PlayerBoxStack
+from .shortcuts import ShortcutsContainer
 from .sliders import AudioSlider, BrightnessSlider, MicrophoneSlider
 from .submenu import (
     AudioSubMenu,
@@ -41,6 +35,12 @@ from .submenu import (
     PowerProfileToggle,
     WifiSubMenu,
     WifiToggle,
+)
+from .submenu.mic import MicroPhoneSubMenu
+from .togglers import (
+    HyprIdleQuickSetting,
+    HyprSunsetQuickSetting,
+    NotificationQuickSetting,
 )
 
 
@@ -385,7 +385,8 @@ class QuickSettingsButtonWidget(ButtonWidget):
 
         self.network = network_service
 
-        self.brightness_service = Brightness.get_default()
+        # Initialize the audio service
+        self.brightness_service = Brightness()
 
         self.audio.connect("notify::speaker", self.on_speaker_changed)
         self.brightness_service.connect(
@@ -485,13 +486,12 @@ class QuickSettingsButtonWidget(ButtonWidget):
         """Update the brightness icon."""
         try:
             # Convert brightness to percentage (0-100)
-            normalized_brightness = int(
-                (
-                    self.brightness_service.screen_brightness
-                    / self.brightness_service.max_screen
-                )
-                * 100
+
+            normalized_brightness = helpers.convert_to_percent(
+                self.brightness_service.screen_brightness,
+                self.brightness_service.max_screen,
             )
+
             icon_info = get_brightness_icon_name(normalized_brightness)
             if icon_info:
                 self.brightness_icon.set_from_icon_name(

@@ -949,19 +949,28 @@ scrollbar {
   border-radius: 1.5em;
   padding: 1em 1em;
 }
+.weather-box #weather-expander arrow {
+  color: #cdd6f4;
+}
 .weather-box #weather-header-grid {
   font-size: 11pt;
   color: white;
   font-weight: 500;
 }
-.weather-box #weather-header-grid .header-label {
-  font-size: 1em;
+.weather-box #weather-header-grid .header-label, .weather-box #weather-header-grid .stats {
+  font-size: 0.87em;
 }
-.weather-box #weather-header-grid .temperature {
-  font-size: 2em;
+.weather-box #weather-header-grid #condition {
+  font-size: 1.6em;
+  font-weight: 600;
 }
-.weather-box #weather-header-grid .feels-like {
+.weather-box #weather-header-grid .header-label#sunrise-sunset, .weather-box #weather-header-grid #sunrise-sunset.stats {
   font-size: 0.8em;
+  font-weight: 500;
+  color: rgb(163.1967213115, 179.7213114754, 234.8032786885);
+}
+.weather-box #weather-header-grid .stats {
+  margin: 0 10px 0 30px;
 }
 .weather-box #weather-separator {
   margin-top: 10px;
