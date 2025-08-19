@@ -1,194 +1,207 @@
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font","JetBrainsMono Nerd Font";
-    font-weight: normal;
-    font-size: 16px;
-    min-height: 32px;
+  font-family: JetbrainsMono Nerd Font;
+  font-size: 13px;
+  min-height: 0;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 0px;
 }
 
-@import "theme.css";
-
-window#waybar {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-left: 20px; 
-    margin-right: 20px;
-    margin-top: 20px;
+#waybar {
+  background: transparent;
+  color: #c6d0f5;
+  margin: 2px 2px;
 }
 
-
-tooltip {
-    background: @main-bg;
-    color: @main-fg;
-    border-radius: 7px;
-    border-width: 0px;
+#workspaces {
+  border-radius: 10px;
+  margin: 5px;
+  background: #101010;
+  margin-left: 2px;
 }
 
 #workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0px;
-    border-radius: 8px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: 0px;
-    padding-left: 2px;
-    padding-right: 2px;
-    margin-right: 0px;
-    color: @main-fg;
-    animation: ws_normal 20s ease-in-out 1;
+  color: #babbf1;
+  border-radius: 10px;
+  padding: 0.4rem;
 }
 
 #workspaces button.active {
-    background: @wb-act-bg;
-    color: @wb-act-fg;
-    margin-left: 2px;
-    padding-left: 11px;
-    padding-right: 11px;
-    margin-right: 2px;
-    animation: ws_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+  color: #99d1db;
+  border-radius: 10px;
+}
+
+button {
+  background: transparent;
 }
 
 #workspaces button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-fg;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  background: #1e1e1e;
+  border: 0px solid transparent;
 }
 
-#taskbar button {
-    box-shadow: none;
-	text-shadow: none;
-    padding: 0px;
-    border-radius: 8px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: 0px;
-    padding-left: 2px;
-    padding-right: 2px;
-    margin-right: 0px;
-    color: @wb-color;
-    animation: tb_normal 20s ease-in-out 1;
+#custom-music,
+#custom-notification,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#custom-lock,
+#custom-power,
+#custom-weather,
+#custom-uptime,
+#custom-disk,
+#custom-vpn,
+#custom-docker {
+  background-color: #101010;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
 }
 
-#taskbar button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
-    margin-left: 2px;
-    padding-left: 11px;
-    padding-right: 11px;
-    margin-right: 2px;
-    animation: tb_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+#cpu {
+  border-radius: 10px 0px 0px 10px;
 }
 
-#taskbar button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-color;
-    animation: tb_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+#memory {
+  border-radius: 0px 10px 10px 0px;
+}
+#custom-notification {
+  border-radius: 10px 0px 0px 10px;
+}
+#custom-disk {
+  border-radius: 0px 10px 10px 0px;
 }
 
-#tray menu * {
-    min-height: 16px
+#tray {
+ border-radius: 10px;
+ margin-right: 0.3rem;
 }
 
-#tray menu separator {
-    min-height: 10px
+#clock {
+  color: #8caaee;
+  border-radius: 0px 10px 10px 0px;
 }
 
+#custom-weather {
+  color: #8caaee;
+  margin-left: 0.5rem;
+  border-radius: 10px;
+}
+#custom-vpn {
+  margin-right: 0.5rem;
+  border-radius: 10px;
+}
+
+#battery {
+  color: #a6d189;
+}
+
+#battery.charging {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging) {
+  color: #e78284;
+}
+
+#backlight {
+  color: #e5c890;
+}
 
 #backlight,
-#battery,
-#bluetooth,
-#custom-cava,
-#custom-cliphist,
-#clock,
-#clock,
-#custom-cpuinfo,
-#cpu,
-#custom-display,
-#custom-github_hyde,
-#custom-gpuinfo,
-#custom-hyprsunset,
-#idle_inhibitor,
-#custom-keybindhint,
-#language,
-#memory,
-#mpris,
-#network,
-#custom-notifications,
-#custom-power,
-#privacy,
-#pulseaudio,
-#custom-sensorsinfo,
-#custom-spotify,
-#taskbar,
-#taskbar,
-#taskbar#windows,
-#custom-theme,
-#tray,
-#custom-updates,
-#custom-wallchange,
-#custom-wbar,
-#custom-weather,
-#window,
-#workspaces,
-#workspaces,
-#workspaces,
-#custom-l_end,
-#custom-r_end,
-#custom-sl_end,
-#custom-sr_end,
-#custom-rl_end,
-#custom-rr_end {
-    color: @main-fg;
-    background: @main-bg;
-    opacity: 1;
-    margin: 3px 0px 3px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
+#battery {
+  border-radius: 0;
 }
 
-#workspaces,
-#taskbar {
-    padding: 0px;
+#pulseaudio {
+  color: #ea999c;
+  border-radius: 10px 0px 0px 10px;
 }
 
-#custom-r_end {
-    border-radius: 0px 19px 19px 0px;
-    margin-right: 8px;
-    padding-right: 0px;
+#network {
+  color: #6c757d;
+  margin-right: 0.5rem;
+  border-radius: 0px 10px 10px 0px;
 }
 
-#custom-l_end {
-    border-radius: 19px 0px 0px 19px;
-    margin-left: 8px;
-    padding-left: 0px;
+#network .icon-upload {
+  color: #8caaee;
 }
 
-#custom-sr_end {
-    border-radius: 0px;
-    margin-right: 8px;
-    padding-right: 0px;
+#network .icon-download {
+  color: #e5c890;
 }
 
-#custom-sl_end {
-    border-radius: 0px;
-    margin-left: 8px;
-    padding-left: 0px;
+#network .icon-disconnected {
+  color: #dc3545;
 }
 
-#custom-rr_end {
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 8px;
-    padding-right: 0px;
+#network .tooltip {
+  color: #17a2b8;
 }
 
-#custom-rl_end {
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 8px;
-    padding-left: 0px;
+
+#custom-docker {
+  color: #85c1dc;
 }
+
+#custom-music {
+  margin-left: 1rem;
+  color: #ca9ee6;
+  border-radius: 10px;
+}
+
+#custom-lock {
+  color: #babbf1;
+}
+
+#custom-power {
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  color: #e78284;
+}
+
+#custom-docker.docker {
+  color: #85c1dc;
+}
+
+#custom-docker.docker-none {
+  color: #737994;
+}
+
+#custom-docker.docker-error {
+  color: #e78284;
+}
+
+#custom-weather.clear {
+  color: #e5c890; /* Sunny yellow */
+}
+
+#custom-weather.cloud {
+  color: #99d1db; /* Light blue */
+}
+
+#custom-weather.rain {
+  color: #8caaee; /* Blue */
+}
+
+#custom-weather.snow {
+  color: #c6d0f5; /* White-ish */
+}
+
+#custom-weather.thunder {
+  color: #ca9ee6; /* Purple */
+}
+
+#custom-weather.fog {
+  color: #b0b4bc; /* Gray */
+}
+
+#custom-weather.error {
+  color: #e78284; /* Red */
+}
+
