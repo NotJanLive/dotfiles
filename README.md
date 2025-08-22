@@ -4,7 +4,6 @@
    - `iwctl`
    - `station wlan0 scan`
    - `station wlan0 connect <name>`
-   - `iwctl`
 
 3. Update GPG-Keys using `pacman-key --init` and `pacman-key --populate` **(optional)**
 4. Install archlinux on the device using `archinstall`
